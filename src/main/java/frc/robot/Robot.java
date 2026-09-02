@@ -6,22 +6,33 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import edu.wpi.first.wpilibj2.command.StartEndCommand;
+import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 
 import frc.robot.spindexer.SpindexerSubsystem;
 
 public class Robot extends TimedRobot {
 
+    private final CommandXboxController controller = new CommandXboxController(0);
+
     private final SpindexerSubsystem spindexer = new SpindexerSubsystem();
 
     public Robot() {
         SmartDashboard.putData("Spindexer", spindexer);
+
+        controller
+                .leftBumper()
+                .whileTrue(new StartEndCommand(spindexer::start, spindexer::stop, spindexer));
     }
 
     @Override
     public void robotInit() {}
 
     @Override
-    public void robotPeriodic() {}
+    public void robotPeriodic() {
+        CommandScheduler.getInstance().run();
+    }
 
     @Override
     public void autonomousInit() {}
