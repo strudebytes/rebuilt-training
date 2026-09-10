@@ -9,6 +9,13 @@ Trainees, please go to [`TRAINING.md`](TRAINING.md)
 ### Xbox Controller Bindings
 (Add documented controls here)
 
+Left Bumper (hold) = Start and Stop Spindexer
+
+D-Pad Down = Deploy Intake
+
+D-Pad Up = Stow Intake
+
+
 ### SmartDashboard Mappings
 What each control is in SmartDashboard, in Keyboard Settings.
 
