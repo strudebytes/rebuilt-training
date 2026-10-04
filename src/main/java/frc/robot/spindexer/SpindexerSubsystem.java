@@ -26,7 +26,7 @@ public class SpindexerSubsystem extends SubsystemBase {
         moveMotorSpeed(SpindexerConfig.START_SPEED);
     }
 
-    /** /** Sets Motor Speed in fraction when stopping */
+    /** Sets Motor Speed to zee row */
     public void stop() {
         moveMotorSpeed(0);
     }
